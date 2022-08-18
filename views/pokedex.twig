@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./style.css">
+		<title>Pokedex</title>
+	</head>
+
+	<body>
+		<main>
+		<div id="header">
+			<div id="header-st">
+				<img id="user-img" src="./img/trainer.png" alt="user">
+				<h2 id="session">{{userConnected}}</h2>
+			</div>
+			<h1><img id="logo" src="./img/logo.png" alt="logo"></h1>
+			<a href="/logout"><img id="disconnect" src="./img/power-off.png" alt="déconnexion"></a>
+		</div>
+		<div id="nav-option">
+            <a id="addUser" href="/addPokemon">
+			<h3 id="addpok">Ajouter un Pokemon</h3>
+			<img id="pokeball" src="./img/pokeball.png" alt=""></a>
+		</div>
+		<section id="cardBody">
+            {% for pokemon in pokemon %}
+			<div class="modal" data-pokeid = {{pokemon._id}}>
+				<div id="modal-container">
+					<p>Êtes-vous sûr de vouloir supprimer ce pokemon ?</p>
+					<div id="button-container">
+						<a id="linkDelete"><button id="oui">Oui</button></a>
+						<a href=""><button id="non">Non</button></a>
+					</div>
+				</div>
+			</div>
+			<div id="cardContainer">
+				 {% if pokemon.img == "pikachu.png" %}
+                                <img src="./img/racaillou.png" alt="image pokemon">
+                            {% else %}
+                                <img id="pkmimg" src="./uploads/images/{{pokemon.img}}" alt="image pokemon">
+                            {% endif %}
+				<div id="info">
+					<h3 id="name">{{pokemon.name}}</h3>
+                    <p id="level">{{pokemon.level}}</p>
+                    <p id="type">{{pokemon.type}}</p>
+				</div>
+                <div id="btn">
+                    <a href="/updatePokemon/{{pokemon._id}}"><button id="modif">Modifier</button><a/>
+                    <button id="delete" onclick="modalDelete({{loop.index}})">Supprimer</button>
+				</div>
+			</div>
+            {% endfor %}
+			</section>
+		</main>
+		<footer>
+			<p>Copyright © 2022 Lucas Hatron</p>
+		</footer>
+	</body>
+	<script src="./js/main.js"></script>
+</html>

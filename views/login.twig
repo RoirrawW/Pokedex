@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="./particule.css">
+		<title>Connexion</title>
+	</head>
+	<body>
+		<main>
+		<h1><img src="./img/logo.png" alt="logo"></h1>
+			<form id="login" method='post' action="/">
+				<h2>Connexion</h2>
+			<div>
+				<input type="email" id="mail" name="mail" aria-describedby="emailHelp" value="{{user.mail}}" placeholder="Adresse mail">
+			</div>
+			<div>
+				<input type="password" id="password" name="password" aria-describedby="emailHelp" value="{{user.password}}" placeholder="Mot de passe">
+			</div>
+			<button type="submit">Se connecter</button>
+			<p>Vous n'avez pas de compte ?
+				<a href="/registration">S'inscrire</a>
+			</p>
+		</form>
+		</main>
+		<footer>
+			<p>Copyright © 2022 Lucas Hatron</p>
+		</footer>
+	</body>
+</html>

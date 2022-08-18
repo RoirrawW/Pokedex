@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./style.css">
+		<title>Inscription</title>
+	</head>
+	<body>
+		<main>
+		<h1><img src="./img/logo.png" alt="logo"></h1>
+			<form id="registration" method='post' action="registration">
+				<h2>Inscription</h2>
+            <div>
+				<input type="text" id="lastname" name="lastname" aria-describedby="emailHelp" placeholder="Nom">
+			</div>
+            <div>
+				<input type="text" id="firstname" name="firstname" aria-describedby="emailHelp" placeholder="Prénom">
+			</div>
+            <div>
+				<input type="email" id="mail" name="mail" aria-describedby="emailHelp" placeholder="Adresse mail">
+			</div>
+			<div>
+				<input type="password" id="password" name="password" aria-describedby="emailHelp" placeholder="Mot de passe">
+			</div>
+			<button type="submit" id="modification_validate">S'inscrire</button>
+			<p>Vous avez déjà un compte ?
+				<a href="/">Se connecter</a>
+			</p>
+		</form>
+		</main>
+		<footer>
+			<p>Copyright © 2022 Lucas Hatron</p>
+		</footer>
+	</body>
+</html>
